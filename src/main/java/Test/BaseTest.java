@@ -24,9 +24,10 @@ public class BaseTest {
         webDriver = new ChromeDriver();
         webDriver.get("http://the-internet.herokuapp.com/checkboxes");
 
-        WebElement checkInput=webDriver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[1]"));
+        WebElement checkInput = webDriver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[1]"));
         checkInput.click();
     }
+
     @Test
     public void positiveFormAuthentication() throws InterruptedException {
         webDriver = new ChromeDriver();
@@ -95,5 +96,15 @@ public class BaseTest {
         new Actions(webDriver)
                 .sendKeys("e")
                 .perform();
+    }
+
+    @Test
+    public void addRemoveElements() throws InterruptedException {
+        webDriver = new ChromeDriver();
+        webDriver.get("http://the-internet.herokuapp.com/add_remove_elements/");
+
+        for (int i = 0; i < 10; i++) {
+            webDriver.findElement(By.xpath("//*[@id=\"content\"]/div/button")).click();
+        }
     }
 }
