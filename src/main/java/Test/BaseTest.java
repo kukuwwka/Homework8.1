@@ -85,8 +85,6 @@ public class BaseTest {
         WebElement button = webDriver.findElement(By.xpath("//*[@id=\"start\"]/button"));
         button.click();
 
-        Thread.sleep(5000);
-
         String feedMessage = webDriver.findElement(By.xpath("//*[@id=\"finish\"]/h4")).getText();
         System.out.println("Дождались: " + feedMessage);
     }
