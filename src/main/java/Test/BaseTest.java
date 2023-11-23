@@ -41,6 +41,11 @@ public class BaseTest {
 
         WebElement button = webDriver.findElement(By.xpath("//*[@id=\"login\"]/button"));
         button.click();
+
+        String succes = webDriver.findElement(By.xpath("//*[@id=\"flash\"]")).getText();
+        System.out.println("Успешная авторизация! " + succes);
+
+
     }
 
     @Test
@@ -56,6 +61,9 @@ public class BaseTest {
 
         WebElement button = webDriver.findElement(By.xpath("//*[@id=\"login\"]/button"));
         button.click();
+
+        String mistake = webDriver.findElement(By.xpath("//*[@id=\"flash\"]")).getText();
+        System.out.println("Неверный логин! " + mistake);
     }
 
     @Test
